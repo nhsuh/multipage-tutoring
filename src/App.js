@@ -21,7 +21,7 @@ function App() {
       <div style = {page}>
         <div className = "app">
           <Switch>
-            <Route exact path = "/">
+            <Route exact path = "/multipage-tutoring">
               <Home />
             </Route>
             <Route path = "/Addition">

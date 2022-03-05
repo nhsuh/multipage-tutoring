@@ -34,7 +34,7 @@ export default function Navbar( {correctness}) {
     <div style = {navbar}>
         <div>
             <h1 style = {title}>Integer Operations Website</h1>
-            <Link style = {navbarColors} to = "/">Home</Link>
+            <Link style = {navbarColors} to = "/multipage-tutoring">Home</Link>
             <Link style = {navbarColors} to = "/Addition"> Addition </Link>
             <Link style = {navbarColors} to = "/Subtraction"> Subtraction </Link>
         </div>

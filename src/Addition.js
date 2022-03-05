@@ -1,9 +1,20 @@
 import React, {useState} from 'react'
 import Box from '@material-ui/core/box';
 import numberLineAddition from './images/numberLineAddition.gif'
+import Navbar from './Navbar'
+var numberOne;
+var numberTwo;
+refreshNumbers();
+function refreshNumbers()
+{
+  var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+  var random1 = Math.floor(Math.random()*10)*plusOrMinus
+  var random2 = Math.floor(Math.random()*10)*plusOrMinus
+  numberOne = random1;
+  numberTwo = random2;
+}
 export default function Addition() {
-    const numberOne = 2;
-    const numberTwo = 2;
+
     const answer = numberOne+numberTwo;
     const [userAnswer, setUserAnswer] = useState();
     const [correct, setCorrect] = useState(0);
@@ -14,20 +25,20 @@ export default function Addition() {
         width: '90%'
     }
     const boxStyle = {
-      padding: "10px",
+      padding: "1px",
       fontSize: "20px",
-      marginRight:"150px",
+      marginRight:"315px",
       textAlign: "center",
       cursor: "pointer"
     }
     const handleChange = ((e) => {
-      setUserAnswer(e.currentTarget.Value)
+      setUserAnswer(e.target.value)
     })
     const handleSubmit = (e) => {
-      var userAnswerComp = parseInt(userAnswer)
+      const userAnswerComp = parseInt(userAnswer) //parseInt Nan
       console.log(userAnswer)
       console.log(userAnswerComp)
-      e.preventDefault();
+      //e.preventDefault();
       if(userAnswer === "")
       {
         setCorrect(-2);
@@ -35,6 +46,7 @@ export default function Addition() {
       else if(answer === userAnswerComp)
       {
         setCorrect(1); 
+        refreshNumbers();
       }
       else
       {
@@ -43,7 +55,9 @@ export default function Addition() {
       setUserAnswer("");
     }
   return (
+
     <div style = {additionColors}>
+      <Navbar correctness = {correct}/>
       <h3>Example: -3 + 7 = 4</h3>
       <img style = {additionStyle} src = {numberLineAddition}/>
       <h4>{numberOne} + {numberTwo} = </h4> <input value = {userAnswer} type = "text" onChange = {handleChange}/> 

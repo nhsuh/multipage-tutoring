@@ -19,7 +19,6 @@ function App() {
   return (
     <Router>    
       <div style = {page}>
-        <Navbar />
         <div className = "app">
           <Switch>
             <Route exact path = "/">

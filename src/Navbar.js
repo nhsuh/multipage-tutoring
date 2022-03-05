@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
-export default function Navbar() {
+export default function Navbar( {correctness}) {
     const navbarColors = {
         margin: '20px',
         paddingTop: '30px',
@@ -39,7 +38,10 @@ export default function Navbar() {
             <Link style = {navbarColors} to = "/Addition"> Addition </Link>
             <Link style = {navbarColors} to = "/Subtraction"> Subtraction </Link>
         </div>
-        <hr style = {line1}/>
+        {correctness === 0 && <hr style = {line1}/>}
+        {correctness === -1 && <hr style = {line2}/>}
+        {correctness === -2 && <hr style = {line2}/>}
+        {correctness === 1 && <hr style = {line3}/>}
     </div>
   )
 }

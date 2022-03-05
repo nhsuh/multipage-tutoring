@@ -16,6 +16,21 @@ export default function Navbar() {
     const title = {
         color: '#C92B7B'
     }
+    const line1 = {
+        border: "none",
+        height: "10px",
+        color: '#2BC9C8'
+    }
+    const line2= {
+        border: "none",
+        height: "10px",
+        color: 'orange'
+    }
+    const line3 = {
+        border: "none",
+        height: "10px",
+        color: 'lightgreen'
+    }
   return (
     <div style = {navbar}>
         <div>
@@ -24,7 +39,7 @@ export default function Navbar() {
             <Link style = {navbarColors} to = "/Addition"> Addition </Link>
             <Link style = {navbarColors} to = "/Subtraction"> Subtraction </Link>
         </div>
-        <hr/>
+        <hr style = {line1}/>
     </div>
   )
 }

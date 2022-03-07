@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Navbar from './Navbar';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'; 
 import Home from './Home';
 import Addition from './Addition';
 import Subtraction from './Subtraction';
